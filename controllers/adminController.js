@@ -5,7 +5,6 @@ exports.getAdminPage = (req, res) => {
 }
 
 exports.saveUserData = (req, res) => {
-    console.log(req.body)
     let user = {
         firstName: req.body.em,
         lastName: req.body.ps

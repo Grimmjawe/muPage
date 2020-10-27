@@ -14,12 +14,20 @@ module.exports = class Person{
             if(!er){
                 myData = JSON.parse(fc);
             };
-            console.log(myData);
 
             myData.push(this);
             fs.writeFile(p, JSON.stringify(myData), (er) => {
                 console.log('error: ' + er);
             });
+        });
+    }
+
+    static readData(callBack){
+        fs.readFile(p, (er, fc) => {
+            if(!er){
+                callBack([]);
+            };
+            callBack(JSON.parse(fc));
         });
     }
 }
